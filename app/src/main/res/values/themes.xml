@@ -3,7 +3,18 @@
     <style name="Base.Theme.MusicApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/backlogin</item>
     </style>
 
-    <style name="Theme.MusicApp" parent="Base.Theme.MusicApp" />
+    <style name="Theme.MusicApp" parent="Base.Theme.MusicApp" >
+
+    </style>
+    
+    <style name="Theme.AppCompat.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/color1</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.MusicApp</item>
+        <item name="android:windowBackground">@color/backlogin</item>
+    </style>
 </resources>

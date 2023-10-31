@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color1">#2b3d4f</color>
+    <color name="buttons">#3398db</color>
+    <color name="backlogin">#e6f1f9</color>
 </resources>

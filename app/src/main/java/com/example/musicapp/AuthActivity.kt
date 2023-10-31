@@ -7,15 +7,23 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.musicapp.databinding.ActivityAuthBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class AuthActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAuthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_auth)
+        val screenSplash = installSplashScreen()
 
-        val email = findViewById<EditText>(R.id.etLogin)
-        val password = findViewById<EditText>(R.id.etPassword)
+        super.onCreate(savedInstanceState)
+        binding = ActivityAuthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        screenSplash.setKeepOnScreenCondition{false}
+
+        val email = binding.etLogin
+        val password = binding.etPassword
 
         authenticated(email,password)
 
@@ -23,12 +31,8 @@ class AuthActivity : AppCompatActivity() {
 
     private fun authenticated(email:EditText,password:EditText){
 
-        //val btnRegister = findViewById<Button>(R.id.btnRegister)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val btnForgotpass = findViewById<Button>(R.id.btnForgotPass)
-        val btnRegister = findViewById<Button>(R.id.btnRegister)
 
-        btnLogin.setOnClickListener{
+        binding.btnLogin.setOnClickListener{
 
             val emailS = email.text.toString()
             val passwordS = password.text.toString()
@@ -45,11 +49,11 @@ class AuthActivity : AppCompatActivity() {
 
         }
 
-        btnRegister.setOnClickListener{
+        binding.btnRegister.setOnClickListener{
             showRegister()
         }
 
-        btnForgotpass.setOnClickListener{
+        binding.btnForgotPass.setOnClickListener{
             val emailS = email.text.toString()
             showForgotPass(emailS)
         }

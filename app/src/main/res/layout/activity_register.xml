@@ -37,6 +37,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
         android:hint="Names"
+        android:inputType="text"
         app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
 
     <EditText
@@ -45,6 +46,7 @@
         android:layout_height="48dp"
         android:layout_marginHorizontal="20dp"
         android:hint="Last Names"
+        android:inputType="text"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/etNombre" />
 
@@ -54,6 +56,7 @@
         android:layout_height="48dp"
         android:layout_marginHorizontal="20dp"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/etApellido" />
 
@@ -63,6 +66,7 @@
         android:layout_height="48dp"
         android:layout_marginHorizontal="20dp"
         android:hint="Password"
+        android:inputType="textPassword"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
@@ -110,23 +114,7 @@
             android:contentDescription="Google"
             android:src="@drawable/google" />
 
-        <ImageButton
-            android:id="@+id/facebook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Facebook"
-            android:src="@drawable/facebook" />
 
-        <ImageButton
-            android:id="@+id/twiter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="Twiter"
-            android:src="@drawable/twitter" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

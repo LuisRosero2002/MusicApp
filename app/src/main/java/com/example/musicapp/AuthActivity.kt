@@ -1,9 +1,11 @@
 package com.example.musicapp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
@@ -24,9 +26,26 @@ class AuthActivity : AppCompatActivity() {
 
         val email = binding.etLogin
         val password = binding.etPassword
-
+/*
         authenticated(email,password)
+        session()
 
+ */
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        binding.authLayout.visibility = View.VISIBLE
+    }
+    private fun session() {
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        val email = prefs.getString("email",null)
+
+        if(email != null){
+            binding.authLayout.visibility = View.INVISIBLE
+            showHome(email)
+        }
     }
 
     private fun authenticated(email:EditText,password:EditText){

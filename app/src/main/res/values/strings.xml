@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MusicApp</string>
+    <string name="prefs_file">com.example.musicapp.PREFERENCE_FILE_KEY</string>
+    <string name="default_web_client_id">1:677082052177:android:b9b5bd8ad135281687ea70</string>
 </resources>

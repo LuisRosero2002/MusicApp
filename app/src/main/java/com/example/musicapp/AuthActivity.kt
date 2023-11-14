@@ -35,7 +35,6 @@ class AuthActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
         binding.authLayout.visibility = View.VISIBLE
     }
     private fun session() {
